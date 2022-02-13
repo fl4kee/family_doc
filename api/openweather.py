@@ -126,7 +126,7 @@ class OpenWeather:
             weather_data(dict/list/None): data that needs to be inserted
         """
         dt: Union[date, datetime] = self.dt_datetime
-        # Если это прогноз, то убираем время, так как прогноз выдается на день с интервалом в 3 часа
+        # if it is forecast remove time. Forecast data is presented on whole day with 3 hour interval
         if self.forecast:
             dt = self.dt_datetime.date()
         if weather_data:
